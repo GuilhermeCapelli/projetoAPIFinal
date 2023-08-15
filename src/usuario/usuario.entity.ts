@@ -18,7 +18,4 @@ export class UsuarioEntity{
         this.telefone = telefone;
         this.senha = senha;
     }
-
-   
-
 }
