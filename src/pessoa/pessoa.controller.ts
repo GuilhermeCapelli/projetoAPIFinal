@@ -5,11 +5,12 @@
     import { listapessoaDTO } from "./dto/ConsultaPessoa.dto";
     import { AlteraPessoa } from "./dto/AlteraPessoa.dto";
     import {  Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { pessoaService } from "./pessoa.service";
 
-    @Controller('/pessoas')
+    @Controller('/pessoa')
     export class PessoaController{
-        constructor(private clsPessoasArmazenado: PessoaArmazenado){            
-        }
+    //     constructor(private readonly pessoaService: pessoaService){ }
+        constructor(private clsPessoasArmazenado: PessoaArmazenado){   }
             
         @Get()
         async RetornoPessoa(){
