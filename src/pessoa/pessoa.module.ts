@@ -1,12 +1,12 @@
-import { Module } from "@nestjs/common";
-import { PessoaController } from "./pessoa.controller";
-import { PessoaArmazenado } from "./pessoa.dm";
-
+import { Module } from '@nestjs/common';
+import { DatabaseModule } from '../database/database.module';
+import { PessoaController } from './pessoa.controller';
+// import { PessoaProviders } from './pessoa.providers';
+// import { PessoaService } from './pessoa.service';
 
 @Module({
-    controllers:[PessoaController],
-    providers:[PessoaArmazenado, ]
+  imports: [DatabaseModule],
+  controllers: [PessoaController],
+//   providers: [...pessoaProviders, PessoaService]
 })
-export class PessoaModule{
-
-}
+export class PessoaModule {}

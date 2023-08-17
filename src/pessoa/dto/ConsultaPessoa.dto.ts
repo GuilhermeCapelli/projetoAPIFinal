@@ -1,6 +1,6 @@
-export class listapessoaDTO{
+export class listaPessoaDTO{
     constructor(
-        readonly id:string,
-        readonly nome: string,
+        readonly ID:string,
+        readonly NOME: string
     ){}
 }

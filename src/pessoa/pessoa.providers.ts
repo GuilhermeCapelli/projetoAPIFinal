@@ -1,8 +1,10 @@
 import { DataSource } from 'typeorm';
-import { PessoaEntity } from './pessoa.entity';
+import { PESSOA } from './pessoa.entity';
 
-export const PessoaProvider = [
+export const PessoaProviders = [
   {
-
+    provide: 'PESSOA_REPOSITORY',
+    useFactory: (dataSource: DataSource) => dataSource.getRepository(PESSOA),
+    inject: ['DATA_SOURCE'],
   },
 ];
