@@ -18,6 +18,6 @@ export class CriaPessoaDTO{
     
     @IsString()
     @IsNotEmpty({message: "Nome do Cachorro não pode ser vazio"})
-    NOME_CACHORRO: string;
+    Nome_Cachorro: string;
 
 }
