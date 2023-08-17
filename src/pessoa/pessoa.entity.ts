@@ -9,7 +9,13 @@ export class PESSOA{
     @Column()
     NOME: string;
 
-    @OneToMany(() => PRODUTO, produto => produto.marca)
-    produtos: PRODUTO[];
+    @Column()
+    Telefone: String;
+
+    @Column()
+    Endereco: string;
+
+    @Column()
+    Nome_Cachorro: string;
 
 }
