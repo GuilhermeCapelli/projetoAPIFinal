@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { DatabaseModule } from '../database/database.module';
-import { Marca } from './marca.controller';
+import { Marca_Controller } from './marca.controller';
 import { marcaProviders } from './marca.providers';
 import { MarcaService } from './marca.service';
 
 @Module({
   imports: [DatabaseModule],
-  controllers: [MarcaController],
+  controllers: [Marca_Controller],
   providers: [
     ...marcaProviders,
     MarcaService,
