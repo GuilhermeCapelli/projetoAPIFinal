@@ -11,9 +11,9 @@ import { UsuarioProviders } from './usuario.providers';
 @Injectable()
 export class UsuarioService {
   constructor(    
-    @Inject('PRODUTO_REPOSITORY')
+    @Inject('USUARIO_REPOSITORY')
     private USUARIO_REPOSITORY: Repository<UsuarioEntity>,      
-    @Inject('MARCA_REPOSITORY')
+    @Inject('USUARIO_REPOSITORY')
     private usuario_repository: Repository<UsuarioEntity>,  
     private readonly usuarioRepository: UsuarioService
   ) {}
