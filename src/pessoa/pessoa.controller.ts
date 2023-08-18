@@ -19,7 +19,7 @@ export class PessoaController{
     }
 
     @Post('')
-    async criaMarca(@Body() dados: CriaPessoaDTO): Promise<RetornoCadastroDTO>{        
+    async CriaPessoa(@Body() dados: CriaPessoaDTO): Promise<RetornoCadastroDTO>{        
         return this.pessoa.inserir(dados)        
     }
 
