@@ -16,8 +16,6 @@ export class CriaPessoaDTO{
     TELEFONE: string;
 
     
-    @IsString()
-    @IsNotEmpty({message: "Nome do Cachorro não pode ser vazio"})
-    Nome_Cachorro: string;
+  
 
 }

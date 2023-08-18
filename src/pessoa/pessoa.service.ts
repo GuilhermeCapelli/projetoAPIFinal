@@ -24,7 +24,6 @@ export class PessoaService {
           pessoa.NOME = dados.NOME;
           pessoa.Endereco= dados.ENDERECO;
           pessoa.Telefone = dados.TELEFONE;
-          pessoa.Nome_Cachorro = dados.Nome_Cachorro;
   
       return this.pessoaRepository.save(pessoa)
       .then((result) => {

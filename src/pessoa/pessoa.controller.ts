@@ -24,7 +24,7 @@ export class PessoaController{
     }
 
     @Put(':id')
-    async alterarMarca(@Body() dados: CriaPessoaDTO,@Param('id') id: string): Promise<RetornoCadastroDTO>{        
+    async AlterarPessoa(@Body() dados: CriaPessoaDTO,@Param('id') id: string): Promise<RetornoCadastroDTO>{        
         return this.pessoa.alterar(id,dados)        
     }
     
@@ -39,7 +39,7 @@ export class PessoaController{
     }
 
     @Delete('remove-:id')
-    async removeMarca(@Param('id') id: string): Promise<RetornoObjDTO>{
+    async removepessoa(@Param('id') id: string): Promise<RetornoObjDTO>{
         return this.pessoa.remover(id);
     }
 

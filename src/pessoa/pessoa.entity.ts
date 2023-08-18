@@ -15,7 +15,4 @@ export class PESSOA{
     @Column()
     Endereco: string;
 
-    @Column()
-    Nome_Cachorro: string;
-
 }
