@@ -1,21 +1,19 @@
+import { MARCA } from "src/marca/marca.entity";
+import { PrimaryColumn,Column, ManyToOne, Entity, JoinColumn } from "typeorm";
 
 export class UsuarioEntity{
-    id: string;
-    nome: string;
-    idade: BigInteger;
-    cidade: string;
-    email: string;
-    telefone: string;
-    senha: string; 
-
-
-    constructor(id:string,nome: string,idade: BigInteger,cidade: string,email: string,telefone: string,senha: string){
-        this.id = id;
-        this.nome = nome;
-        this.idade = idade;
-        this.cidade = cidade;
-        this.email = email;
-        this.telefone = telefone;
-        this.senha = senha;
-    }
+    @PrimaryColumn()
+    ID: string;
+    @Column()
+    NOME: string;
+    @Column()
+    IDADE: BigInt;
+    @Column()
+    CIDADE: String;
+    @Column()
+    EMAIL: String;
+    @Column()
+    TELEFONE: String;
+    @Column()
+    Senha: String;
 }

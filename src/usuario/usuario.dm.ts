@@ -3,37 +3,51 @@ import { UsuarioEntity } from "./usuario.entity";
 
 @Injectable()
 export class UsuariosArmazenados{
-    #usuarios: UsuarioEntity[] = [];    
+    #USUARIO: UsuarioEntity[] = [];    
 
-    AdicionarUsuario(usuario: UsuarioEntity){
-        this.#usuarios.push(usuario);
+    AdicionarProduto(produto: UsuarioEntity){
+        this.#USUARIO.push(USUARIO);
     }
 
-    get Usuarios(){        
-        return this.#usuarios;
+    get Produtos(){        
+        return this.#USUARIO;
     }
 
-    async validaEmail(email: string){
-        const possivelUsuario = this.#usuarios.find(
-            usuario => usuario.email === email  
-        );
-        return (possivelUsuario !== undefined);
-    }
+    
 
     private buscaPorID(id: string){
-        const possivelUsuario = this.#usuarios.find(
-            usuarioSalvo => usuarioSalvo.id === id
+        const possivelProduto = this.#USUARIO.find(
+            USUSALVO => USUSALVO.ID === id
         );
 
-        if(!possivelUsuario){
+        if(!POSSIVELUSUARIO){
             throw new Error('Usuario não encontrado');
         }
 
-        return possivelUsuario
+        return POSSIVELUSUARIO
     }
 
-    async atualizaUsuario(id: string, dadosAtualizacao: Partial<UsuarioEntity>){
-        const usuario = this.buscaPorID(id);
+    async ProdutosByID(id: string){
+        const USUARIO = this.buscaPorID(id);
+        return USUARIO;
+    }
+
+    async ProdutosByNome(nome: string){
+        const produto = this.#USUARIO.filter(
+            USUSALVO => USUSALVO.NOME.includes(nome)
+        );
+
+        if(!produto){
+            throw new Error('Usuario não encontrado');
+        }
+
+        return produto;
+    }
+
+
+
+    async atualizausuario(id: string, dadosAtualizacao: Partial<USUARIO>){
+        const USUARIO = this.buscaPorID(id);
 
         Object.entries(dadosAtualizacao).forEach(
             ([chave, valor]) => {
@@ -41,18 +55,20 @@ export class UsuariosArmazenados{
                     return;
                 }
 
-                usuario[chave] = valor;
+                USUARIO[chave] = valor;
             }
         )
 
-        return usuario;
+        return USUARIO;
     }
 
-   async removeUsuario(id: string){
-        const usuario = this.buscaPorID(id);
-        this.#usuarios = this.#usuarios.filter(
-            usuarioSalvo => usuarioSalvo.id !== id
+    async REMOVEUSUARIO(id: string){
+        const USUARIO = this.buscaPorID(id);
+        this.#USUARIO = this.#USUARIO.filter(
+            prodSalvo => prodSalvo.ID !== id
         )
-        return usuario;
-   }
+        return USUARIO;
+    }
+
+    
 }

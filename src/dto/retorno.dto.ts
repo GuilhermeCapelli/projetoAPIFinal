@@ -2,7 +2,13 @@ import { IsEmail, IsInt, IsNotEmpty, IsString, MinLength } from "class-validator
 
 
 export class RetornoCadastroDTO{
-    id: string;
+    private _id: string;
+    public get id(): string {
+        return this._id;
+    }
+    public set id(value: string) {
+        this._id = value;
+    }
     message: string;
 }
 

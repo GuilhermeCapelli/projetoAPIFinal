@@ -22,7 +22,7 @@ export class ProdutoService {
   
 
   async listar(): Promise<PRODUTO[]> {
-    return this.produtoRepository.find();
+    return this.produtoRepository.find()
   }
 
   async listarMarca(): Promise<listaProdutoMarcaDTO[]> {
